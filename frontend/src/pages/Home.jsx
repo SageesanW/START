@@ -32,7 +32,7 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <BackgroundVideo videoUrl="https://player.vimeo.com/external/374124709.sd.mp4?s=5e5e9b96d2e1a5e3e7b7c7e1e7e7e7e7e7e7e7e7&profile_id=164&oauth2_token_id=57447761" />
+        <BackgroundVideo videoUrl="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-the-earth-turning-27572-large.mp4" />
         
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           <h1 className="text-6xl md:text-8xl font-thin text-white mb-6 tracking-tight leading-tight">
