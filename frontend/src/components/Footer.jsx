@@ -33,8 +33,8 @@ const Footer = () => {
               <span className="text-xl font-bold text-white">QuantumCode AI</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Transforming businesses through cutting-edge AI, machine learning, 
-              and innovative software development solutions.
+              Building intelligent software solutions that combine traditional development expertise 
+              with cutting-edge AI capabilities to transform your business operations.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">
@@ -72,16 +72,16 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Expertise Areas */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">Expertise</h3>
             <ul className="space-y-2">
               {[
-                'AI Development',
-                'Machine Learning',
-                'Software Development',
-                'Web Development',
-                'Consulting'
+                'Custom Software Development',
+                'Web & Mobile Applications',
+                'AI Integration',
+                'Cloud Solutions',
+                'DevOps & Automation'
               ].map((service) => (
                 <li key={service}>
                   <span className="text-gray-400 hover:text-purple-400 transition-colors duration-300 cursor-pointer">

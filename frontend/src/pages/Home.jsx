@@ -1,32 +1,39 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import BackgroundVideo from '../components/BackgroundVideo';
-import { ArrowRight, Zap, Target, Users, Rocket } from 'lucide-react';
+import { ArrowRight, Code, Target, Users, Lightbulb } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const whyChooseUsItems = [
     {
-      icon: <Zap className="w-8 h-8 text-purple-400" />,
-      title: "Innovative Problem Solvers",
-      description: "We don't just deliver software — we craft intelligent solutions that anticipate challenges and unlock new possibilities for your business."
+      icon: <Lightbulb className="w-8 h-8 text-purple-400" />,
+      title: "Innovative Software Solutions",
+      description: "We craft intelligent software applications that integrate AI capabilities to solve complex business challenges and drive innovation."
     },
     {
       icon: <Target className="w-8 h-8 text-purple-400" />,
-      title: "End-to-End Expertise", 
-      description: "From concept to deployment, our integrated approach covers the full lifecycle of IT, AI, and ML projects — ensuring seamless execution and measurable results."
+      title: "End-to-End Development", 
+      description: "From concept to deployment, our comprehensive approach covers the full software development lifecycle with seamless AI integration and measurable results."
     },
     {
-      icon: <Rocket className="w-8 h-8 text-purple-400" />,
-      title: "Future-Ready Technology",
-      description: "We harness emerging trends in AI, cloud, and automation so your business stays ahead of the curve, today and tomorrow."
+      icon: <Code className="w-8 h-8 text-purple-400" />,
+      title: "Future-Ready Applications",
+      description: "We build scalable software solutions enhanced with AI features, ensuring your applications stay competitive and adaptable to emerging technologies."
     },
     {
       icon: <Users className="w-8 h-8 text-purple-400" />,
       title: "Client-Centric Partnership",
-      description: "Your success is our priority. We work closely with you to understand your goals, adapting every solution to fit your vision and strategy."
+      description: "Your success is our priority. We collaborate closely to understand your requirements, delivering custom software solutions that align with your business goals."
     }
   ];
+
+  const handleScheduleConsultation = () => {
+    navigate('/contact');
+  };
 
   return (
     <div className="min-h-screen">
@@ -36,30 +43,23 @@ const Home = () => {
         
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           <h1 className="text-6xl md:text-8xl font-thin text-white mb-6 tracking-tight leading-tight">
-            AI-Powered
-            <span className="block text-purple-400 font-light">Solutions</span>
+            Software Development
+            <span className="block text-purple-400 font-light">with AI Integration</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Transforming businesses through cutting-edge artificial intelligence, 
-            machine learning, and innovative software development.
+            Building intelligent software solutions that combine traditional development expertise 
+            with cutting-edge AI capabilities to transform your business operations.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex justify-center">
             <Button 
+              onClick={handleScheduleConsultation}
               size="lg" 
               className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
             >
-              Get Started
+              Schedule Consultation
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg transition-all duration-300 hover:scale-105"
-            >
-              View Our Work
             </Button>
           </div>
         </div>
@@ -81,7 +81,7 @@ const Home = () => {
               <span className="text-purple-400"> Us</span>
             </h2>
             <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              We combine technical excellence with strategic thinking to deliver solutions that drive real business value.
+              We combine software development expertise with AI innovation to deliver solutions that drive real business value and competitive advantage.
             </p>
           </div>
 
@@ -116,16 +116,17 @@ const Home = () => {
       <section className="py-24 bg-gradient-to-r from-gray-900 to-black">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-4xl md:text-5xl font-thin text-white mb-6">
-            Ready to Transform Your Business?
+            Ready to Build Your Next Software Solution?
           </h2>
           <p className="text-xl text-white/70 mb-10">
-            Let's discuss how our AI and software solutions can accelerate your growth.
+            Let's discuss how our software development expertise combined with AI integration can accelerate your business growth.
           </p>
           <Button 
+            onClick={handleScheduleConsultation}
             size="lg"
             className="bg-purple-500 hover:bg-purple-600 text-white px-12 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
           >
-            Start Your Project
+            Schedule Consultation
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
