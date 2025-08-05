@@ -50,11 +50,12 @@ async def get_contact(contact_id: str):
 @router.put("/{contact_id}/status")
 async def update_contact_status(contact_id: str, status: str):
     """Update contact status (admin functionality)"""
+    from datetime import datetime
     collection = await get_contacts_collection()
     
     result = await collection.update_one(
         {"id": contact_id},
-        {"$set": {"status": status, "updated_at": contact.updated_at}}
+        {"$set": {"status": status, "updated_at": datetime.utcnow()}}
     )
     
     if result.modified_count == 0:
