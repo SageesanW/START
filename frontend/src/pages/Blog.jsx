@@ -142,14 +142,19 @@ const Blog = () => {
                       <span>{new Date(post.date).toLocaleDateString()}</span>
                     </div>
 
-                    <Button 
-                      variant="outline"
-                      size="sm"
-                      className="w-full border-purple-400/50 text-purple-400 hover:bg-purple-400/10 transition-all duration-300 group/btn"
+                    <Link 
+                      to={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                      className="w-full"
                     >
-                      Read More
-                      <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                    </Button>
+                      <Button 
+                        variant="outline"
+                        size="sm"
+                        className="w-full border-purple-400/50 text-purple-400 hover:bg-purple-400/10 transition-all duration-300 group/btn"
+                      >
+                        Read More
+                        <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
