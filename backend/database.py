@@ -28,10 +28,6 @@ async def get_contacts_collection():
     database = await get_database()
     return database.contacts
 
-async def get_blog_posts_collection():
-    database = await get_database()
-    return database.blog_posts
-
 async def get_newsletter_collection():
     database = await get_database()
     return database.newsletter_subscriptions

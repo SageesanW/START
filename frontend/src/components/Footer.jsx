@@ -1,6 +1,9 @@
 import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { Button } from './ui/button';
+import { useToast } from '../hooks/use-toast';
 import { 
   Mail, 
   Phone, 
@@ -11,9 +14,41 @@ import {
   ArrowUp
 } from 'lucide-react';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+
 const Footer = () => {
+  const { toast } = useToast();
+  const [email, setEmail] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubscribing(true);
+    try {
+      const response = await axios.post(`${API_BASE_URL}/api/newsletter/subscribe`, { email });
+      
+      toast({
+        title: "Subscribed!",
+        description: response.data.message || "Thank you for subscribing to our newsletter!",
+      });
+      
+      setEmail('');
+    } catch (error) {
+      console.error('Error subscribing:', error);
+      toast({
+        title: "Error",
+        description: "There was an error subscribing. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubscribing(false);
+    }
   };
 
   const currentYear = new Date().getFullYear();
@@ -57,7 +92,6 @@ const Footer = () => {
                 { name: 'Home', path: '/' },
                 { name: 'About', path: '/about' },
                 { name: 'Services', path: '/services' },
-                { name: 'Blog', path: '/blog' },
                 { name: 'Contact', path: '/contact' }
               ].map((link) => (
                 <li key={link.name}>
@@ -113,19 +147,24 @@ const Footer = () => {
             {/* Newsletter Signup */}
             <div className="mt-6">
               <h4 className="text-sm font-medium text-white mb-2">Stay Updated</h4>
-              <div className="flex space-x-2">
+              <form onSubmit={handleNewsletterSubmit} className="flex space-x-2">
                 <input
                   type="email"
                   placeholder="Your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                   className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded text-white text-sm focus:border-purple-400 focus:outline-none"
                 />
                 <Button 
+                  type="submit"
                   size="sm"
+                  disabled={isSubscribing}
                   className="bg-purple-500 hover:bg-purple-600 text-white px-3 py-2"
                 >
-                  Subscribe
+                  {isSubscribing ? 'Subscribing...' : 'Subscribe'}
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -15,6 +16,8 @@ import {
   Linkedin,
   Twitter
 } from 'lucide-react';
+
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -37,15 +40,25 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const response = await axios.post(`${API_BASE_URL}/api/contacts`, formData);
+      
       toast({
         title: "Message Sent!",
-        description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+        description: response.data.message || "Thank you for contacting us. We'll get back to you within 24 hours.",
       });
+      
       setFormData({ name: '', email: '', company: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "There was an error sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const contactInfo = [

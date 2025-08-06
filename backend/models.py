@@ -31,50 +31,6 @@ class Contact(BaseModel):
     class Config:
         use_enum_values = True
 
-# Blog Models
-class BlogPostCreate(BaseModel):
-    title: str = Field(..., min_length=1, max_length=200)
-    content: str = Field(..., min_length=100)
-    excerpt: str = Field(..., max_length=500)
-    author: str = Field(..., max_length=100)
-    category: str = Field(..., max_length=50)
-    tags: List[str] = Field(default_factory=list)
-    image: str = Field(..., description="Image URL")
-    published: bool = Field(default=True)
-
-class BlogPost(BaseModel):
-    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    title: str
-    slug: str  # Generated from title
-    content: str
-    excerpt: str
-    author: str
-    category: str
-    tags: List[str]
-    image: str
-    published: bool
-    read_time: str  # e.g., "5 min read"
-    created_at: datetime = Field(default_factory=datetime.utcnow)
-    updated_at: datetime = Field(default_factory=datetime.utcnow)
-
-class BlogPostResponse(BaseModel):
-    id: str
-    title: str
-    slug: str
-    excerpt: str
-    author: str
-    category: str
-    tags: List[str]
-    image: str
-    read_time: str
-    created_at: datetime
-
-class BlogPostsResponse(BaseModel):
-    posts: List[BlogPostResponse]
-    total: int
-    page: int
-    total_pages: int
-
 # Newsletter Models
 class NewsletterSubscribe(BaseModel):
     email: EmailStr
