@@ -1,4 +1,3 @@
-import React from 'react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -62,10 +61,10 @@ const Footer = () => {
             <div className="flex items-center space-x-3">
               <img 
                 src="https://images.unsplash.com/photo-1628760584600-6c31148991e9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwzfHxBSSUyMHRlY2hub2xvZ3klMjBsb2dvfGVufDB8fHx8MTc1NDMwNTYyMnww&ixlib=rb-4.1.0&q=85" 
-                alt="QuantumCode AI" 
+                alt="KairoDev" 
                 className="w-8 h-8"
               />
-              <span className="text-xl font-bold text-white">QuantumCode AI</span>
+              <span className="text-xl font-bold text-white">KairoDev</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
               Building intelligent software solutions that combine traditional development expertise 
@@ -132,7 +131,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400">
                 <Mail className="w-4 h-4 text-purple-400" />
-                <span>hello@quantumcodeai.com</span>
+                <span>info.kairodev@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone className="w-4 h-4 text-purple-400" />
@@ -172,7 +171,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} QuantumCode AI. All rights reserved.
+            © {currentYear} KairoDev. All rights reserved.
           </p>
           
           <div className="flex items-center space-x-6 mt-4 md:mt-0">

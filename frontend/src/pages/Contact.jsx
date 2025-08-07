@@ -65,7 +65,7 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6 text-purple-400" />,
       title: "Email",
-      details: "hello@quantumcodeai.com",
+      details: "info.kairodev@gmail.com",
       action: "mailto:hello@quantumcodeai.com"
     },
     {
