@@ -58,7 +58,7 @@ const Home = () => {
               size="lg" 
               className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
             >
-              Schedule Consultation
+              Get Started 
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>

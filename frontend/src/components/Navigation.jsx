@@ -39,7 +39,7 @@ const Navigation = () => {
               className="w-8 h-8 transition-transform duration-300 group-hover:scale-110"
             />
             <span className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300">
-              QuantumCode AI
+              KairoDev
             </span>
           </Link>
 

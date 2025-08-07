@@ -71,13 +71,13 @@ const Contact = () => {
     {
       icon: <Phone className="w-6 h-6 text-purple-400" />,
       title: "Phone",
-      details: "+1 (555) 123-4567",
+      details: "+94 (75) 529 7256",
       action: "tel:+15551234567"
     },
     {
       icon: <MapPin className="w-6 h-6 text-purple-400" />,
       title: "Location",
-      details: "San Francisco, CA",
+      details: "Jaffna, Sri Lanka",
       action: "#"
     },
     {
@@ -280,7 +280,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-medium text-white">Quick Response</h3>
                       <p className="text-gray-300 text-sm">
-                        We typically respond to inquiries within 2-4 hours during business hours.
+                        We typically respond to inquiries within 4-8 hours during business hours.
                       </p>
                     </div>
                   </div>
