@@ -41,7 +41,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/contacts`, formData);
+      const response = await axios.post(`/.netlify/functions/sendEmail`, formData);
       
       toast({
         title: "Message Sent!",
