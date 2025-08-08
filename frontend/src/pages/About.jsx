@@ -35,7 +35,7 @@ const About = () => {
     },
     {
       name: "Tharveen",
-      role: "Financial consultant", 
+      role: "Financial Consultant", 
       expertise: ["Budgeting & Financial Analysis", "Financial Strategy & Planning", "Risk Management & Compliance"],
       bio: "Driving financial clarity and strategic growth through expert analysis and planning.",
       image: "/images/tharveen.jpeg"
